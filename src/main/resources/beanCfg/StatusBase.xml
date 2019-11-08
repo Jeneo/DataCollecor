@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd
+               http://www.springframework.org/schema/aop
+  http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<bean id="StatusBase" class="com.collector.entity.ServerInfo">
+		<property name="servName" value="10.201.41.85"></property>
+		<property name="ip" value="10.201.41.85"></property>
+		<property name="user" value="shenzhen_wyzj"></property>
+		<property name="pwd" value="Wyzj123!@#"></property>
+		<property name="ftpType" value="1"></property>
+	</bean>
+
+	<bean id="StatusBase_Path"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="StatusBase"></property>
+		<property name="servPath"
+			value="/$Time{yyyyMMdd}/$Regex{.*csv}"></property>
+	</bean>
+
+
+	<util:list id="collectOmcs" list-class="java.util.ArrayList">
+		<list>
+			<ref bean="StatusBase_Path" />
+		</list>
+	</util:list>
+
+
+	<bean id="upLoadServer"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="wy_server_53"></property>
+		<property name="servPath" value="/DataInsert/infor/"></property>
+	</bean>
+
+
+	<util:list id="stepRunnable" list-class="java.util.ArrayList">
+		<bean class="com.collector.util.init.Init"></bean>
+		<bean class="com.collector.util.net.FindFiles"></bean>
+		<bean class="com.collector.util.net.DownLoadFile"></bean>
+		<bean class="com.collector.util.file.FilesMoveToBcpPath"></bean>
+		<bean class="com.collector.util.net.UpLoadFile"></bean>
+	</util:list>
+
+
+	<bean id="Interceptor" class="com.collector.aop.Interceptor"></bean>
+	<aop:config>
+		<aop:pointcut
+			expression="execution( boolean com.collector.server.IStepRunnable.execute(java.util.Map))"
+			id="pointcut" />
+		<aop:advisor advice-ref="Interceptor"
+			pointcut-ref="pointcut" />
+	</aop:config>
+</beans>        

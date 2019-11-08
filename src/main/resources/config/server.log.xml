@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="300"
+	xmlns:xi="http://www.w3.org/2001/XInclude">
+	<properties>
+		<property name="server">server</property>
+		<property name="quartz">quartz</property>
+		<property name="error">error</property>
+	</properties>
+
+
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %C{1}:%msg%n" />
+		</Console>
+		<RollingRandomAccessFile name="${server}"
+			fileName="${sys:LOG_HOME}/${server}.log"
+			filePattern="${sys:LOG_HOME}/$${date:yyyy-MM}/${server}-%d{yyyy-MM-dd}-%i.gz">
+			<PatternLayout
+				pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %C{1}:%msg%n" />
+			<Policies>
+				<!-- <TimeBasedTriggeringPolicy interval="1" /> -->
+				<SizeBasedTriggeringPolicy size="3 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="30" />
+			<Filters>
+				<ThresholdFilter level="debug" onMatch="ACCEPT"
+					onMismatch="DENY" />
+				<!--<ThreadContextMapFilter onMatch="ACCEPT" onMismatch="DENY"> <KeyValuePair 
+					key="domainId" value="RD2" /> </ThreadContextMapFilter> -->
+			</Filters>
+		</RollingRandomAccessFile>
+
+		<RollingRandomAccessFile name="${quartz}"
+			fileName="${sys:LOG_HOME}/${quartz}.log"
+			filePattern="${sys:LOG_HOME}/$${date:yyyy-MM}/${quartz}-%d{yyyy-MM-dd}-%i.gz">
+			<PatternLayout
+				pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %C{1}:%msg%n%n" />
+			<Policies>
+				<!-- <TimeBasedTriggeringPolicy interval="1" /> -->
+				<SizeBasedTriggeringPolicy size="3 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="30" />
+			<Filters>
+				<ThresholdFilter level="debug" onMatch="ACCEPT"
+					onMismatch="DENY" />
+				<!--<ThreadContextMapFilter onMatch="ACCEPT" onMismatch="DENY"> <KeyValuePair 
+					key="domainId" value="RD2" /> </ThreadContextMapFilter> -->
+			</Filters>
+		</RollingRandomAccessFile>
+
+		<RollingRandomAccessFile name="${error}"
+			fileName="${sys:LOG_HOME}/${error}.log"
+			filePattern="${sys:LOG_HOME}/$${date:yyyy-MM}/${error}-%d{yyyy-MM-dd}-%i.gz">
+			<PatternLayout
+				pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %C:%msg%n" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="3 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="30" />
+			<Filters>
+				<ThresholdFilter level="error" onMatch="ACCEPT"
+					onMismatch="DENY" />
+			</Filters>
+		</RollingRandomAccessFile>
+	</Appenders>
+	<Loggers>
+		<!--过滤掉spring和mybatis的一些无用的DEBUG信息 -->
+		<Logger name="org.springframework" level="INFO" />
+		<Logger name="org.mybatis" level="INFO" />
+		<Logger name="org.quartz" level="INFO" />
+		<Logger name="org.thymeleaf" level="INFO" />
+
+		<Logger name="${quartz}" additivity="false">
+			<AppenderRef ref="${quartz}" />
+		</Logger>
+		<Root level="debug">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="${server}" />
+			<AppenderRef ref="${error}" />
+		</Root>
+	</Loggers>
+</Configuration>  
+

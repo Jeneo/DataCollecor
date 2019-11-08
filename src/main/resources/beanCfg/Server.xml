@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	<util:constant id="ftp"
+		static-field="com.collector.entity.ServerInfo.FTP" />
+	<util:constant id="sftp"
+		static-field="com.collector.entity.ServerInfo.SFTP" />
+
+
+	<!-- hw lte && 5g -->
+
+	<!-- 188.15.57.5 -->
+	<bean id="HW188.15.57.6" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.15.57.6"></property>
+		<property name="ip" value="188.15.57.6"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="YJ_AdMIn@201"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+	<bean id="HW188.15.57.7" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.15.57.7"></property>
+		<property name="ip" value="188.15.57.7"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="YJ_AdMIn@201"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+	<bean id="HW188.15.57.8" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.15.57.8"></property>
+		<property name="ip" value="188.15.57.8"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="YJ_AdMIn@201"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+	<bean id="HW188.15.57.9" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.15.57.9"></property>
+		<property name="ip" value="188.15.57.9"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="YJ_AdMIn@201"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+	<bean id="HW188.15.57.11" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.15.57.11"></property>
+		<property name="ip" value="188.15.57.11"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="YJ_AdMIn@201"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+	<!-- 188.15.57.53 -->
+	<bean id="HW188.15.57.54" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.15.57.54"></property>
+		<property name="ip" value="188.15.57.54"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="YJ_AdMIn@201"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+	<bean id="HW188.15.57.55" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.15.57.55"></property>
+		<property name="ip" value="188.15.57.55"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="YJ_AdMIn@201"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+	<bean id="HW188.15.57.56" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.15.57.56"></property>
+		<property name="ip" value="188.15.57.56"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="YJ_AdMIn@201"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+	<bean id="HW188.15.57.57" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.15.57.57"></property>
+		<property name="ip" value="188.15.57.57"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="YJ_AdMIn@201"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+	<bean id="HW188.15.57.59" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.15.57.59"></property>
+		<property name="ip" value="188.15.57.59"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="YJ_AdMIn@201"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+
+	<!-- 188.2.169.30 主机+从机 -->
+	<bean id="HW188.2.169.30" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.2.169.30"></property>
+		<property name="ip" value="188.2.169.30"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Qldyx@007"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+	<bean id="HW188.2.169.31" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.2.169.31"></property>
+		<property name="ip" value="188.2.169.31"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Qldyx@007"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+	<bean id="HW188.2.169.32" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.2.169.32"></property>
+		<property name="ip" value="188.2.169.32"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Qldyx@007"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+	<bean id="HW188.2.169.33" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.2.169.33"></property>
+		<property name="ip" value="188.2.169.33"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Qldyx@007"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+	<bean id="HW188.2.169.34" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.2.169.34"></property>
+		<property name="ip" value="188.2.169.34"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Qldyx@007"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+	<bean id="HW188.2.169.36" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.2.169.36"></property>
+		<property name="ip" value="188.2.169.36"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Qldyx@007"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+	<bean id="HW_188.2.135.229"
+		class="com.collector.entity.ServerInfo" lazy-init="true">
+		<property name="servName" value="HW188.2.135.229"></property>
+		<property name="ip" value="188.2.135.229"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Qldyx@007"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+
+	<!-- HW188.2.169.83 主机+从机 -->
+	<bean id="HW188.2.135.83" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.2.135.83"></property>
+		<property name="ip" value="188.2.135.83"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Qldyx@007"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+	<bean id="HW188.2.135.84" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.2.135.84"></property>
+		<property name="ip" value="188.2.135.84"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Qldyx@007"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+	<bean id="HW188.2.135.88" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.2.135.88"></property>
+		<property name="ip" value="188.2.135.88"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Qldyx@007"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+	<bean id="HW188.2.135.89" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.2.135.89"></property>
+		<property name="ip" value="188.2.135.89"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Qldyx@007"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+	<bean id="HW188.2.135.90" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.2.135.90"></property>
+		<property name="ip" value="188.2.135.90"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Qldyx@007"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+	
+	<!-- HW188.2.169.87 主机+从机 -->
+	<bean id="HW188.2.169.87" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.2.169.87"></property>
+		<property name="ip" value="188.2.169.87"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Qldyx@007"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+	<bean id="HW188.2.169.88" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.2.169.88"></property>
+		<property name="ip" value="188.2.169.88"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Qldyx@007"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+	<bean id="HW188.2.169.89" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.2.169.89"></property>
+		<property name="ip" value="188.2.169.89"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Qldyx@007"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+	<bean id="HW188.2.169.90" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.2.169.90"></property>
+		<property name="ip" value="188.2.169.90"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Qldyx@007"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+	<bean id="HW188.2.169.91" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.2.169.91"></property>
+		<property name="ip" value="188.2.169.91"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Qldyx@007"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+	<bean id="HW188.2.169.93" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.2.169.93"></property>
+		<property name="ip" value="188.2.169.93"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Qldyx@007"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+
+
+	<bean id="HW188.2.145.157" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.2.145.157"></property>
+		<property name="ip" value="188.2.145.157"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Lybzfqcl@2018"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+
+
+
+	<!--hw gsm server -->
+	<bean id="HW188.2.80.72" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.2.80.72"></property>
+		<property name="ip" value="188.2.80.72"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Changeme_123"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+	<bean id="HW188.2.80.136" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="HW188.2.80.136"></property>
+		<property name="ip" value="188.2.80.136"></property>
+		<property name="user" value="ftpuser"></property>
+		<property name="pwd" value="Changeme_123"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+
+
+	<!--wy server -->
+	<bean id="wy_server_53" class="com.collector.entity.ServerInfo"
+		lazy-init="true">
+		<property name="servName" value="wy_server_53"></property>
+		<property name="ip" value="10.245.101.53"></property>
+		<property name="user" value="dataftp"></property>
+		<property name="pwd" value="Ftp123!"></property>
+		<property name="ftpType" ref="ftp"></property>
+	</bean>
+
+	<bean id="Dbserver" class="com.core.util.Dbserver"
+		lazy-init="true">
+		<property name="driver"
+			value="com.microsoft.sqlserver.jdbc.SQLServerDriver"></property>
+		<property name="url"
+			value="jdbc:sqlserver://10.245.101.53:43118"></property>
+		<property name="username" value="dbinput"></property>
+		<property name="password">
+			<value><![CDATA[{dbinput}@AppOnly^&97qx]]></value>
+		</property>
+	</bean>
+</beans>

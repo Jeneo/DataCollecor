@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.collector.mapper.UserMapper">
+ 
+    <resultMap id="BaseResultMap" type="com.collector.entity.User">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="userName" jdbcType="VARCHAR" property="userName" />
+        <result column="passWord" jdbcType="VARCHAR" property="passWord" />
+        <result column="realName" jdbcType="VARCHAR" property="realName" />
+    </resultMap>
+ 
+    <select id="findById" resultType="com.collector.entity.User" parameterType="Integer">
+        select * from QUARTZJOBINFO.dbo.t_user where id = #{id}
+    </select>
+ 
+     <select id="findAll" resultType="com.collector.entity.User" >
+        select * from QUARTZJOBINFO.dbo.t_user
+    </select>
+ 
+ 
+<!--  	void save(User user);
+	void deleteById(String userId);
+	List<User> findAll();
+	Optional<User> findById(String userId);
+	List<User> seach(String userName, String phone); -->
+</mapper>

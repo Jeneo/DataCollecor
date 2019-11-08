@@ -1,0 +1,44 @@
+#开发环境
+server:
+  port: 8088
+  servlet:
+    context-path: /datacollector
+    
+spring:
+  datasource:
+    username: dbinput
+    password: '{dbinput}@AppOnly^&97qx'
+    url: jdbc:sqlserver://10.245.101.53:43118;SelectMethod=cursor;DatabaseName=QUARTZJOBINFO_DEV
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  devtools:
+    restart:
+     enabled: true
+     additional-paths: src/main/java
+     exclude: static/**,Log/**
+  freemarker:
+    cache: false    #页面不加载缓存，修改即时生效
+    
+
+  thymeleaf:
+    cache: false #开发时关闭缓存,不然没法看到实时页面
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML5
+    servlet:
+      content-type: text/html
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.example.entity
+ 
+#showSql
+logging:
+  config: classpath:config/server.log.xml
+#  level:
+#    com:
+#      example:
+#        mapper : debug
+        
+
+   

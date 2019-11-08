@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "classpath:mybatis-3-mapper.dtd">
+<mapper namespace="com.collector.mapper.SchedulerJobMapper">
+	<sql id="defColumnList">
+		ID ,jobName ,jobClassPath , cronExpression ,jobState
+		,description,param ,version
+	</sql>
+
+
+	<select id="loadDefJob"
+		resultType="com.collector.entity.SchedulerJob">
+		SELECT
+		<include refid="defColumnList" />
+		FROM QUARTZJOBINFO_DEV.dbo.USER_DEF_SCHEDULERJOB
+	</select>
+
+	<select id="loadDefJobById"
+		resultType="com.collector.entity.SchedulerJob" parameterType="int">
+		SELECT
+		<include refid="defColumnList" />
+		FROM QUARTZJOBINFO_DEV.dbo.USER_DEF_SCHEDULERJOB
+		where id=#{id}
+	</select>
+
+	<select id="loadDefJobByName"
+		resultType="com.collector.entity.SchedulerJob" parameterType="String">
+		SELECT
+		<include refid="defColumnList" />
+		FROM QUARTZJOBINFO_DEV.dbo.USER_DEF_SCHEDULERJOB
+		where jobName=#{jobName}
+	</select>
+	
+	<select id="loadInvalidJob"
+		resultType="com.collector.entity.SchedulerJob"
+		parameterType="int">
+		SELECT a.TRIGGER_NAME,a.TRIGGER_GROUP,a.JOB_NAME,a.JOB_GROUP
+		FROM  QUARTZJOBINFO_DEV.QRTZ_TRIGGERS a
+		WHERE NOT EXISTS
+		(SELECT * FROM  QUARTZJOBINFO_DEV.USER_DEF_SCHEDULERJOB b
+		WHERE a.TRIGGER_NAME=b.jobName)
+	</select>
+
+	<update id="updateVersionById"
+		parameterType="com.collector.entity.SchedulerJob">
+		update   QUARTZJOBINFO_DEV.dbo.USER_DEF_SCHEDULERJOB set
+		version=#{version}
+		where id=#{id}
+	</update>
+
+
+	<sql id="Base_Column_List">
+		id ,scheduler_job.job_name jobName ,scheduler_job.job_group
+		jobGroup,cron_expression cronExpression ,job_class_path jobClassPath
+		,is_run isRun ,scheduler_job.description ,date_create dateCreate
+		,date_update dateUpdate,date_delete dateDelete
+		,COALESCE(qrtz_triggers.trigger_state, 'NORUN') triggerState
+	</sql>
+
+
+	<select id="loadById"
+		resultType="com.collector.entity.SchedulerJob" parameterType="String">
+
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM scheduler_job
+		left join qrtz_triggers
+		on
+		qrtz_triggers.job_name=scheduler_job.job_name and
+		qrtz_triggers.job_group=scheduler_job.job_group
+
+		where
+		scheduler_job.id=#{id}
+
+	</select>
+
+	<insert id="insert"
+		parameterType="com.collector.entity.SchedulerJob">
+		insert into scheduler_job(id ,job_name
+		,job_group,cron_expression ,job_class_path ,is_run ,description
+		,date_create ,date_update )
+		values(#{id},#{jobName},#{jobGroup},#{cronExpression},#{jobClassPath},#{isRun},#{description},
+		now(),now())
+	</insert>
+
+	<select id="list" resultType="com.collector.entity.SchedulerJob"
+		parameterType="map">
+		select
+		<include refid="Base_Column_List" />
+		from scheduler_job
+		left join qrtz_triggers
+		on
+		qrtz_triggers.job_name=scheduler_job.job_name and
+		qrtz_triggers.job_group=scheduler_job.job_group
+
+		<trim prefix="where" prefixOverrides="and|or">
+			scheduler_job.date_delete is null
+			<if test="id != '' and id != null "> and scheduler_job.id= #{id}</if>
+			<if test="status != '' and status != null"> and scheduler_job.status= #{status}</if>
+			<if test="job_name != '' and job_name != null"> and scheduler_job.job_name= #{jobName}</if>
+			<if test="job_group != '' and job_group != null"> and scheduler_job.job_group= #{jobGroup}</if>
+		</trim>
+		order by scheduler_job.job_name
+	</select>
+
+	<update id="update"
+		parameterType="com.collector.entity.SchedulerJob">
+		update scheduler_job set
+		job_name=#{jobName},job_group=#{jobGroup},cron_expression=#{cronExpression},job_class_path=#{jobClassPath},is_run=#{isRun},description=#{description},date_update=now()
+		where id=#{id}
+	</update>
+
+	<update id="delete" parameterType="String">
+		update scheduler_job set
+		date_delete=now()
+		where id=#{id}
+	</update>
+
+</mapper>

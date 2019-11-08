@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+
+	<bean id="upLoadServer"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="wy_server_53"></property>
+		<property name="servPath"
+			value="/DataInsert/GSM_DSP_GCELLSTAT/"></property>
+	</bean>
+
+	<bean id="Parser"
+		class="com.collector.parse.hw.mmltask.ParseMmltask">
+		<property name="keyWord1" value="小区索引号  小区名称"></property>
+		<property name="keyWord2" value="小区索引号  ="></property>
+		<property name="cols">
+			<list>
+				<value>小区名称</value>
+				<value>激活状态</value>
+				<value>小区服务状态</value>
+				<value>小区管理状态</value>
+			</list>
+		</property>
+		<property name="p" value="&#x0009;"></property>
+		<property name="fileName" value="GSM_DSP_GCELLSTAT"></property>
+	</bean>
+
+	<util:list id="collectOmcs" list-class="java.util.ArrayList">
+		<list>
+			<bean class="com.collector.entity.ServerInfoDtcoll">
+				<property name="serverInof" ref="HW188.2.80.72"></property>
+				<property name="servPath"
+					value="/ftproot/MMLTaskResult/15106/history/$Regex{.*tar.gz} -pl"></property>
+			</bean>
+		</list>
+		<list>
+			<bean class="com.collector.entity.ServerInfoDtcoll">
+				<property name="serverInof" ref="HW188.2.80.136"></property>
+				<property name="servPath"
+					value="/ftproot/MMLTaskResult/31102/history/$Regex{.*tar.gz} -pl"></property>
+			</bean>
+		</list>
+	</util:list>
+
+
+
+	<bean id="sqlName" class="java.lang.String">
+		<constructor-arg type="java.lang.String"
+			value="EXEC NQIALARMDB.dbo.PROC_GSM_DSP_GCELLSTAT_数据入库" />
+	</bean>
+
+
+	<bean id="SaveHour" class="java.lang.Integer">
+		<constructor-arg name="value" value="72" />
+	</bean>
+
+	<import resource="HW_Collector.xml" />
+
+
+
+
+</beans>

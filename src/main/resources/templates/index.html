@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>yyshop</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+<link rel="stylesheet" th:src="@{/js/jquery-3.1.1.min.js}">
+</head>
+<body class="container">
+	<!--<img th:src="@{/img/bg.jpg}">-->
+	<br>
+	<h1>
+		Information <small>Student List</small>
+	</h1>
+	<br>
+	<div class="alert alert-danger  alert-dismissible" role="alert">
+		<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+		<span class="sr-only">Error:</span> Paging function to be developed...
+	</div>
+	<br>
+	<div class="panel panel-default">
+		<div class="panel-heading">Student</div>
+		<table class="table table-striped">
+			<THEAD>
+				<tr>
+					<th>id</th>
+					<th>jobName</th>
+					<th>jobClassPath</th>
+					<th>cronExpression</th>
+					<th>jobState</th>
+					<th>description</th>
+					<th>param</th>
+					<th>version</th>
+					<th>modi</th>
+					<th>dele</th>
+				</tr>
+			</THEAD>
+			<TBODY>
+				<tr th:each="SchedulerJob:${schedulerJobs}">
+					<td th:text="${SchedulerJob.id}"></td>
+					<td th:text="${SchedulerJob.jobName}"></td>
+					<td th:text="${SchedulerJob.jobClassPath}"></td>
+					<td th:text="${SchedulerJob.cronExpression}"></td>
+					<td th:text="${SchedulerJob.jobState}"></td>
+					<td th:text="${SchedulerJob.description}"></td>
+					<td th:text="${SchedulerJob.param}"></td>
+					<td th:text="${SchedulerJob.version}"></td>
+					<td><a th:href="${'/edit/'+SchedulerJob.id}">edit</a></td>
+					<td><a th:href="${'/del/'+SchedulerJob.id}">delete</a></td>
+				</tr>
+			</TBODY>
+		</table>
+	</div>
+	<a class="btn btn-info" href="/datacollector/toAdd" role="button">Add</a>
+	&nbsp;&nbsp;&nbsp;
+	<a class="btn btn-info" href="/datacollector/seach" role="button">Seach</a>
+	&nbsp;&nbsp;&nbsp;
+	<a class="btn btn-info" href="/datacollector/JobInitializable"
+		role="button">初始化</a> &nbsp;&nbsp;&nbsp;
+	<a class="btn btn-info" href="/datacollector/JobInfo" role="button">运行信息</a>
+	&nbsp;&nbsp;&nbsp;
+	<a class="btn btn-info" href="/datacollector/JobClean" role="button">清空</a>
+	&nbsp;&nbsp;&nbsp;
+	<a class="btn btn-info" href="/datacollector/JobStart" role="button">开始</a>
+</body>
+</html>

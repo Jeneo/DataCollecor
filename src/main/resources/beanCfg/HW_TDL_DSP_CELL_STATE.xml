@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+	<!-- HW188.15.57.6 -->
+	<bean id="HW188.15.57.6_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.15.57.6"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/31111/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+	<bean id="HW188.15.57.7_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.15.57.7"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/31111/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+	<bean id="HW188.15.57.8_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.15.57.8"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/31111/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+	<bean id="HW188.15.57.9_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.15.57.9"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/31111/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+	<bean id="HW188.15.57.11_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.15.57.11"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/31111/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+
+
+	<!-- HW188.15.57.54 -->
+	<bean id="HW188.15.57.54_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.15.57.54"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/31115/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+	<bean id="HW188.15.57.55_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.15.57.55"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/31115/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+	<bean id="HW188.15.57.56_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.15.57.56"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/31115/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+	<bean id="HW188.15.57.57_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.15.57.57"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/31115/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+	<bean id="HW188.15.57.59_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.15.57.59"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/31115/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+
+
+
+
+
+
+
+
+
+
+
+	<bean id="HW_188.2.135.229_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW_188.2.135.229"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/162923/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+	<!-- 188.2.135.82 -->
+	<bean id="HW188.2.135.83_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.2.135.83"></property>
+		<property name="servPath"
+			value="./ftproot/MMLTaskResult/120189/history/"></property>
+	</bean>
+	<bean id="HW188.2.135.84_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.2.135.84"></property>
+		<property name="servPath"
+			value="./ftproot/MMLTaskResult/120189/history/"></property>
+	</bean>
+	<bean id="HW188.2.135.88_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.2.135.88"></property>
+		<property name="servPath"
+			value="./ftproot/MMLTaskResult/120189/history/"></property>
+	</bean>
+	<bean id="HW188.2.135.89_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.2.135.89"></property>
+		<property name="servPath"
+			value="./ftproot/MMLTaskResult/120189/history/"></property>
+	</bean>
+	<bean id="HW188.2.135.90_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.2.135.90"></property>
+		<property name="servPath"
+			value="./ftproot/MMLTaskResult/120189/history/"></property>
+	</bean>
+
+	<!-- 188.2.169.30 -->
+	<bean id="HW188.2.169.31_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.2.169.31"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/42122/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+
+	<bean id="HW188.2.169.32_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.2.169.32"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/42122/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+
+	<bean id="HW188.2.169.33_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.2.169.33"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/42122/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+
+	<bean id="HW188.2.169.34_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.2.169.34"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/42122/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+
+	<bean id="HW188.2.169.36_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.2.169.36"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/42122/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+
+
+	<!-- 188.2.169.87 -->
+	<bean id="HW188.2.169.88_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.2.169.88"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/53339/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+	<bean id="HW188.2.169.89_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.2.169.89"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/53339/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+	<bean id="HW188.2.169.90_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.2.169.90"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/53339/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+	<bean id="HW188.2.169.91_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.2.169.91"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/53339/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+	<bean id="HW188.2.169.93_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.2.169.93"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/53339/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+
+
+
+
+
+
+
+
+
+	<bean id="HW188.2.145.157_PATH"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="HW188.2.145.157"></property>
+		<property name="servPath"
+			value="/ftproot/MMLTaskResult/59794/history/$Regex{.*tar.gz} -pl"></property>
+	</bean>
+	<bean id="upLoadServer"
+		class="com.collector.entity.ServerInfoDtcoll">
+		<property name="serverInof" ref="wy_server_53"></property>
+		<property name="servPath"
+			value="/DataInsert/LTE_DSP_CELL_STATE/"></property>
+	</bean>
+
+	<bean id="Parser"
+		class="com.collector.parse.hw.mmltask.ParseMmltask">
+		<property name="keyWord1" value="本地小区标识  小区名称"></property>
+		<property name="keyWord2" value="本地小区标识  ="></property>
+		<property name="cols">
+			<list>
+				<value>本地小区标识</value>
+				<value>小区名称</value>
+				<value>小区的实例状态</value>
+			</list>
+		</property>
+		<property name="p" value=","></property>
+		<property name="fileName" value="LTE_DSP_CELL_STATE"></property>
+	</bean>
+
+	<util:list id="collectOmcs" list-class="java.util.ArrayList">
+		<list>
+			<ref bean="HW_188.2.135.229_PATH" />
+		</list>
+		<list>
+			<ref bean="HW188.2.135.83_PATH" />
+			<ref bean="HW188.2.135.84_PATH" />
+			<ref bean="HW188.2.135.88_PATH" />
+			<ref bean="HW188.2.135.89_PATH" />
+			<ref bean="HW188.2.135.90_PATH" />
+		</list>
+		<list>
+			<ref bean="HW188.2.169.31_PATH" />
+			<ref bean="HW188.2.169.32_PATH" />
+			<ref bean="HW188.2.169.33_PATH" />
+			<ref bean="HW188.2.169.34_PATH" />
+			<ref bean="HW188.2.169.36_PATH" />
+		</list>
+		<list>
+			<ref bean="HW188.2.169.88_PATH" />
+			<ref bean="HW188.2.169.89_PATH" />
+			<ref bean="HW188.2.169.90_PATH" />
+			<ref bean="HW188.2.169.91_PATH" />
+			<ref bean="HW188.2.169.93_PATH" />
+		</list>
+		<list>
+			<ref bean="HW188.2.145.157_PATH" />
+		</list>
+		<list>
+			<ref bean="HW188.15.57.6_PATH" />
+			<ref bean="HW188.15.57.7_PATH" />
+			<ref bean="HW188.15.57.8_PATH" />
+			<ref bean="HW188.15.57.9_PATH" />
+			<ref bean="HW188.15.57.11_PATH" />
+		</list>
+		<list>
+			<ref bean="HW188.15.57.54_PATH" />
+			<ref bean="HW188.15.57.55_PATH" />
+			<ref bean="HW188.15.57.56_PATH" />
+			<ref bean="HW188.15.57.57_PATH" />
+			<ref bean="HW188.15.57.59_PATH" />
+		</list>
+	</util:list>
+
+
+
+	<bean id="sqlName" class="java.lang.String">
+		<constructor-arg type="java.lang.String"
+			value="EXEC [NQITDINFO].[dbo].[PROC_LTE_DSP_CELL_STATE_入库]" />
+	</bean>
+
+	<!-- <util:map id="Tdl_Alarm_cfg" map-class="java.util.HashMap"> <entry 
+		key="upLoadServer" value-ref="upLoadServer"></entry> <entry key="ial" value-ref="ial"></entry> 
+		<entry key="sqlName" value-ref="sqlName"></entry> <entry key="dclName" value-ref="dclName"></entry> 
+		<entry key="collectOmcs" value-ref="collectOmcs"></entry> <entry key="dbserver" 
+		value-ref="Dbserver"></entry> </util:map> -->
+
+	<bean id="SaveHour" class="java.lang.Integer">
+		<constructor-arg name="value" value="72" />
+	</bean>
+
+	<import resource="HW_Collector.xml" />
+
+
+
+</beans>

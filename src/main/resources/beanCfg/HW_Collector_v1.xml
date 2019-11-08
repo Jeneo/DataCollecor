@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd
+               http://www.springframework.org/schema/aop
+  http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+  
+  
+	
+	<util:list id="stepRunnable" list-class="java.util.ArrayList">
+		<bean class="com.collector.util.init.Init"></bean>
+		<bean class="com.collector.util.file.DeleHisFiles"></bean>
+		<bean class="com.collector.util.net.FindLatestFilesThread"></bean>
+		<bean class="com.collector.util.net.DownLoadFileThread"></bean>
+		<bean class="com.collector.util.compress.DecompressionGzTarServerFilesThread"></bean>
+		<bean class="com.collector.util.parse.ParseFileHwThread"></bean>
+		<bean class="com.collector.util.net.UpLoadFileThread"></bean>
+  		<bean class="com.collector.util.dao.DataInputByFileNames"></bean> 
+	</util:list>
+
+	<bean id="Interceptor" class="com.collector.aop.Interceptor"></bean>
+	<!-- <bean id="ThrowsAdvice" class="com.collection.aop.ThrowAdvice"></bean> -->
+	<aop:config>
+		<aop:pointcut
+			expression="execution( boolean com.collector.server.IStepRunnable.execute(java.util.Map))" id="pointcut" />
+		<aop:advisor advice-ref="Interceptor"
+			pointcut-ref="pointcut" />
+	</aop:config> 
+  
+  
+  
+  
+  </beans>
